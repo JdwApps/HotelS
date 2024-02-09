@@ -3,13 +3,12 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { allura } from "../fonts";
 
-const Title  = ({ text }) => {
+const AboutText  = ({ text }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.9,
+    threshold: 0.7,
   });
 
   useEffect(() => {
@@ -19,7 +18,7 @@ const Title  = ({ text }) => {
   }, [controls, inView]);
 
   return (
-    <div ref={ref} className={allura.className}>
+    <div ref={ref} >
       <motion.h1
         initial="hidden"
         animate={controls}
@@ -28,7 +27,7 @@ const Title  = ({ text }) => {
           visible: { opacity: 1, y: 0 },
           hidden: { opacity: 0, y: 50 },
         }}
-        className="text-6xl text-center  text-gray-200 font-bold"
+        className="text-lg text-center  text-gray-200"
       >
         {text}
       </motion.h1>
@@ -36,4 +35,4 @@ const Title  = ({ text }) => {
   );
 };
 
-export default Title ;
+export default AboutText ;

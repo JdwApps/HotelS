@@ -1,4 +1,4 @@
-import {Poppins, Parisienne, Style_Script} from 'next/font/google'
+import {Poppins, Parisienne, Style_Script,Montez,Allura} from 'next/font/google'
 
 export const poppins = Poppins({
     weight:'400',
@@ -11,6 +11,16 @@ export const parisienne = Parisienne({
     display: 'swap',
 })
 export const styleScript = Style_Script({
+    weight:'400',
+    subsets: ['latin'],
+    display: 'swap',
+})
+export const montez = Montez({
+    weight:'400',
+    subsets: ['latin'],
+    display: 'swap',
+})
+export const allura = Allura({
     weight:'400',
     subsets: ['latin'],
     display: 'swap',

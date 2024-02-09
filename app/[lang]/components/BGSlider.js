@@ -6,6 +6,7 @@ import Slider from 'react-slick';
 import AnimatedTextCharacter from './AnimatedTextCharacter';
 import AniText from './AniText';
 import Image from 'next/image';
+
 const BGSlider = ({ images, title }) => {
 
   const settings = {
@@ -28,7 +29,7 @@ const BGSlider = ({ images, title }) => {
         {images.map((image, index) => (
           <div className="relative" key={index}>
             <div className="w-full h-screen relative" >
-            <img src={`/img/${image}`} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
+              <img src={`/img/${image}`} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
               <div
                 className="absolute bottom-0 w-full h-1/5 bg-gradient-to-t from-gray-800 to-transparent"
 
@@ -36,17 +37,28 @@ const BGSlider = ({ images, title }) => {
             </div>
             <div className='text-gray-800'
               style={{
-                position:'absolute',
+                position: 'absolute',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
                 textAlign: 'center',
               }}
             >
-              <div className='bg-gray-200 bg-opacity-20 rounded-full p-12'>
-                <AnimatedTextCharacter text="S" />
+              <div className=' p-12'>
+
+                <div className='w-full flex items-center justify-center'>
+                  <Image
+                    src="/logoS.svg"
+                    alt="SVG Image"
+                    width={300}
+                    height={300}
+                  />
+
+                </div>
+
+
                 <AnimatedTextCharacter text={title} />
-                <AniText text="Bluff Beach, Bocas del Toro" />
+                <AniText text="Playa Bluff, Bocas del Toro" />
               </div>
 
             </div>

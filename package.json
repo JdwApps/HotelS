@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.3",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@supabase/supabase-js": "^2.39.1",
     "framer-motion": "^10.16.4",
     "i18next": "^23.7.12",
@@ -24,6 +25,7 @@
     "react-leaflet": "^4.2.1",
     "react-parallax": "^3.5.1",
     "react-scroll-parallax": "^3.4.5",
+    "react-select": "^5.8.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1"
   },

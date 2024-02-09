@@ -7,16 +7,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./styles.css";
 import Link from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher'
-
+import Image from 'next/image'
 const itemVariants = {
   initial: { y: -20, opacity: 0 },
   animate: { y: 0, opacity: 1 },
 };
 
-const NavBar = () => {
+const NavBar = ({ hotel, resto, activite, about, contact, faune, bookNow }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  // Get the current path
+  const currentPath = window.location.pathname;
+
+  // Extract the language code from the path
+  const lang = currentPath.split('/')[1];
+  console.log('Current Language:', lang);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +59,7 @@ const NavBar = () => {
       initial={false}
       animate={visible ? "visible" : "hidden"}
       variants={variants}
-      className="flex justify-between items-center bg-gradient-to-b from-[rgba(0,0,0,0.8)] to-transparent p-5"
+      className="flex w-screen justify-between items-center bg-gradient-to-b from-[rgba(0,0,0,0.8)] to-transparent p-5"
       style={{
         position: "fixed",
         top: 0,
@@ -68,31 +74,90 @@ const NavBar = () => {
         animate="animate"
       >
         <Link href='/'>
-          <p className="text-3xl text-white font-bold">S</p>
+
+
+          <Image
+            src="/LogoSB.svg"
+            alt="SVG Image"
+            width={50}
+            height={50}
+          />
         </Link>
       </motion.div>
-      <LanguageSwitcher/>
-     
-      <div className="hidden md:flex items-center space-x-12">
-        {["Hotel", "Restaurant", "Activities", "About", "Contact"].map(
-          (item, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              initial="initial"
-              animate="animate"
-              className="relative hover-underline-animation"
-              style={{ display: "inline-block" }}
-            >
-              <Link href={item} className="text-lg">
-                <span>{item}</span>
-              </Link>
-            </motion.div>
-          )
-        )}
+      <LanguageSwitcher />
+
+      <div className="hidden lg:flex items-center space-x-12">
+
+        <motion.div
+          variants={itemVariants}
+          initial="initial"
+          animate="animate"
+          className="relative hover-underline-animation"
+          style={{ display: "inline-block" }}
+        >
+          <Link href='Hotel' className="text-lg">
+            <span>{hotel}</span>
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          initial="initial"
+          animate="animate"
+          className="relative hover-underline-animation"
+          style={{ display: "inline-block" }}
+        >
+          <Link href='Restaurant' className="text-lg">
+            <span>{resto}</span>
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          initial="initial"
+          animate="animate"
+          className="relative hover-underline-animation"
+          style={{ display: "inline-block" }}
+        >
+          <Link href='Activities' className="text-lg">
+            <span>{activite}</span>
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          initial="initial"
+          animate="animate"
+          className="relative hover-underline-animation"
+          style={{ display: "inline-block" }}
+        >
+          <Link href='About' className="text-lg">
+            <span>{about}</span>
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          initial="initial"
+          animate="animate"
+          className="relative hover-underline-animation"
+          style={{ display: "inline-block" }}
+        >
+          <Link href='Contact' className="text-lg">
+            <span>{contact}</span>
+          </Link>
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          initial="initial"
+          animate="animate"
+          className="relative hover-underline-animation"
+          style={{ display: "inline-block" }}
+        >
+          <Link href='Faune' className="text-lg">
+            <span>{faune}</span>
+          </Link>
+        </motion.div>
+
       </div>
 
-      <div className="md:hidden" onClick={toggleMenu} style={{ marginLeft: 'auto' }}>
+      <div className="lg:hidden" onClick={toggleMenu} style={{ marginLeft: 'auto', marginRight: '4vw' }}>
         <div className="burger">
           <div className={isOpen ? "cross" : ""}>
             <div className="burger-line"></div>
@@ -112,21 +177,101 @@ const NavBar = () => {
             className="fixed top-0 left-0 w-full h-full bg-black flex items-center justify-center z-50"
             onClick={toggleMenu}
           >
+
             <div className="flex flex-col items-center text-white space-y-4">
-              {["Hotel", "Restaurant", "Activities", "About", "Contact"].map(
-                (item, index) => (
-                  <motion.a
-                    key={index}
-                    href={item}
-                    className="text-lg"
-                    variants={itemVariants}
-                    initial="initial"
-                    animate="animate"
-                  >
-                    {item}
-                  </motion.a>
-                )
-              )}
+            <motion.div
+              variants={itemVariants}
+              initial="initial"
+              animate="animate"
+            >
+              <Link href='/'>
+
+
+                <Image
+                  src="/LogoSB.svg"
+                  alt="SVG Image"
+                  width={100}
+                  height={100}
+                />
+              </Link>
+            </motion.div>
+              <motion.div
+                variants={itemVariants}
+                initial="initial"
+                animate="animate"
+                className="relative hover-underline-animation"
+                style={{ display: "inline-block" }}
+              >
+                <Link href='Hotel' className="text-lg">
+                  <span>{hotel}</span>
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={itemVariants}
+                initial="initial"
+                animate="animate"
+                className="relative hover-underline-animation"
+                style={{ display: "inline-block" }}
+              >
+                <Link href='Restaurant' className="text-lg">
+                  <span>{resto}</span>
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={itemVariants}
+                initial="initial"
+                animate="animate"
+                className="relative hover-underline-animation"
+                style={{ display: "inline-block" }}
+              >
+                <Link href='Activities' className="text-lg">
+                  <span>{activite}</span>
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={itemVariants}
+                initial="initial"
+                animate="animate"
+                className="relative hover-underline-animation"
+                style={{ display: "inline-block" }}
+              >
+                <Link href='About' className="text-lg">
+                  <span>{about}</span>
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={itemVariants}
+                initial="initial"
+                animate="animate"
+                className="relative hover-underline-animation"
+                style={{ display: "inline-block" }}
+              >
+                <Link href='Contact' className="text-lg">
+                  <span>{contact}</span>
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={itemVariants}
+                initial="initial"
+                animate="animate"
+                className="relative hover-underline-animation"
+                style={{ display: "inline-block" }}
+              >
+                <Link href='Faune' className="text-lg">
+                  <span>{faune}</span>
+                </Link>
+              </motion.div>
+              <motion.div
+                variants={itemVariants}
+                initial="initial"
+                animate="animate"
+              >
+                <Link href="https://90af79e181b4489f.sirvoy.me/" passHref>
+                  <button className=" bg-blue-500 text-white px-4 py-2 rounded">
+                    {bookNow}
+                  </button>
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

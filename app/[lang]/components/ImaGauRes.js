@@ -9,7 +9,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const ImaGauAct = ({ images, titre, text }) => {
+const ImaGauAct = ({ images, titre, text,heure,horaire }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -17,7 +17,7 @@ const ImaGauAct = ({ images, titre, text }) => {
     });
     console.log(images);
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 800,
         slidesToShow: 1,
@@ -85,6 +85,12 @@ const ImaGauAct = ({ images, titre, text }) => {
                             <Title text={titre} />
                             <p className="text-l text-gray-200 md:text-1xl lg:text-xl align-text-center">
                                 {text}
+                            </p>
+                            <p className="text-l mt-8 text-gray-200 md:text-1xl lg:text-xl align-text-center">
+                                {horaire}
+                            </p>
+                            <p className="text-l text-gray-200 md:text-1xl lg:text-xl align-text-center">
+                                {heure}
                             </p>
                         </div>
                     </motion.div>

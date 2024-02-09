@@ -1,5 +1,8 @@
 {
+  "aboutText":"Meet Sonia and Sebastien Brunet, former lawyers who have transitioned into the exciting world of hospitality. Their passion for creating memorable experiences led them to embark on a journey to launch their own hotel. With a wealth of legal expertise behind them, Sonia and Sebastien bring a unique perspective to the world of hospitality, ensuring every guest enjoys a stay that goes beyond expectations. Join us in our commitment to providing warmth, comfort, and unparalleled service.",
     "name": "name",
     "email": "email",
-    "city": "city"
+    "city": "city",
+    "Hotel": "Hôtel"
+
   }

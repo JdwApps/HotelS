@@ -1,4 +1,4 @@
-import Navbar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 import BGSlider from "./components/BGSlider";
 import Footer from "./components/Footer";
 import ImaGauche from "./components/ImaGauche";
@@ -17,8 +17,16 @@ export default async function Home({params}) {
   console.log(lang, 'params for home')
   return (
     <div className="bg-gray-800">
-      <Navbar />
-      <BGSlider title='Hotel and Restaurant' 
+      <NavBar 
+      hotel={lang.hotel} 
+      resto={lang.resto} 
+      activite={lang.activite}
+      about={lang.about}
+      contact={lang.contact}
+      faune={lang.faune}
+      bookNow={lang.bookNow}
+      />
+      <BGSlider title={lang.hotel}
       images = {['plage1.jpg', 'plage2.jpg', 'plage3.jpg', 'plage4.jpg']}
       />
       <ImaGauche image='chambre1.jpg' text={lang.homeHotel} title={lang.hotel}/>
@@ -27,11 +35,15 @@ export default async function Home({params}) {
       <SeparatorB />
 
       <ImaGauche image='plage3.jpg' text={lang.homeActivities} title={lang.activite}/>
-      <ParallaxBanner />
+      <ParallaxBanner image='./img/plage2.jpg' text='Bluff Beach' />
       <BigText />
 
-      <Footer />
-
+      <Footer
+             email={lang.email}
+              adress={lang.adress} 
+              phone={lang.phone} 
+              contact={lang.contact}
+              />
 
     </div>
   );

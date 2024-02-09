@@ -40,7 +40,7 @@ const AniText = ({ text }) => {
 
   return (
     <motion.div
-      className="overflow-hidden  text-2xl md:text-4xl"
+      className="overflow-hidden  text-2xl text-white md:text-4xl"
       variants={container}
       initial="hidden"
       animate="visible"

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { styleScript } from "../fonts";
+import { allura } from "../fonts";
 
 const AniText = ({ text }) => {
   // splitting text into letters
@@ -40,7 +40,7 @@ const AniText = ({ text }) => {
   };
 
   return (
-    <div className={styleScript.className}>
+    <div className={allura.className}>
     <motion.div
       className="overflow-hidden  p-12 text-5xl md:text-8xl"
       variants={container}
@@ -49,8 +49,8 @@ const AniText = ({ text }) => {
     >
       {letters.map((letter, index) => (
         <motion.span    
-        style={{ textShadow: "2px 2px 4px rgba(255,255,255,0.3)" }}       
-        className="font-great-vibes  justify-center text-gray-800" 
+        style={{ textShadow: "2px 2px 4px rgba(30,25,35,0.3)" }}       
+        className="justify-center text-black" 
         variants={child} 
         key={index}>
           {letter === " " ? "\u00A0" : letter}
