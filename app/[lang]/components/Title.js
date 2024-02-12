@@ -28,7 +28,7 @@ const Title  = ({ text }) => {
           visible: { opacity: 1, y: 0 },
           hidden: { opacity: 0, y: 50 },
         }}
-        className="text-6xl text-center  text-gray-200 font-bold"
+        className="px-4 text-6xl text-center  text-gray-200 font-bold"
       >
         {text}
       </motion.h1>

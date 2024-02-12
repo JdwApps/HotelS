@@ -22,7 +22,13 @@ const FootMap = () => (
      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
    />
-   <Marker position={position} icon={redIcon}>
+   <Marker position={position} 
+   icon={L.icon({
+    iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png`,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+  })}>
      <Popup>
        El S Hotel Restaurante. <br /> Bluff Beach.
      </Popup>

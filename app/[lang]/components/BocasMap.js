@@ -28,9 +28,9 @@ console.log(lang)
 
   return (
     <div style={{height:'75vh'}}className=" flex flex-col items-center justify-center">
-      <div className="flex items-center flex-wrap justify-center text-white px-4 z-10">
+      <div className="flex space-x-4 items-center flex-wrap justify-center text-white z-10">
         {Object.keys(categoryColors).map((category, index) => (
-          <div key={index} className="flex  items-center justify-center mr-8">
+          <div key={index} className="flex  items-center justify-center ">
             <img
               src={`https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${getCategoryIcon(category)}.png`}
               className="w-5 h-5 mr-2"

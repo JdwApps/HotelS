@@ -359,7 +359,7 @@ export default async function Activities({ params }) {
 
 
     return (
-        <div className="bg-gray-800">
+        <div className="bg-gray-800 w-screen">
             <NavBar
                 hotel={lang.hotel}
                 resto={lang.resto}
